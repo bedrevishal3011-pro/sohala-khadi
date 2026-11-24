@@ -1,0 +1,29 @@
+{
+  "announcement": "सण-समारंभ स्पेशल कलेक्शन उपलब्ध | Festive Khadi Collection Now In Store",
+  "hero": {
+    "title": "परंपरेचा नवा सोहळा - वाशिम",
+    "subtitle": "Pure hand-spun Khadi, woven with heritage and tailored for every celebration."
+  },
+  "offers": [
+    "सण-समारंभ स्पेशल कलेक्शन उपलब्ध",
+    "दिवाळी ऑफर: खादी कुर्ता वर 10% सूट",
+    "Custom stitching available in 5 days"
+  ],
+  "store": {
+    "name": "सोहळा खादी शॉप | Sohala Khadi Shop",
+    "address": "मेन रोड, वाशिम, महाराष्ट्र 444505",
+    "hours": "सोम - रवि: सकाळी 10:00 - रात्री 8:30",
+    "phone": "919999999999",
+    "phoneDisplay": "+91 99999 99999"
+  },
+  "products": [
+    {"id": "p1", "name": "हँडस्पन खादी कुर्ता | Handspun Khadi Kurta", "price": 1299, "category": "Kurtas", "sizes": "S, M, L, XL, XXL", "description": "100% cotton Khadi, breathable, soft after every wash.", "image": "https://placehold.co/600x750/6A1B1A/FAF8F5?text=Khadi+Kurta"},
+    {"id": "p2", "name": "नेहरू जॅकेट | Nehru Jacket", "price": 1899, "category": "Jackets", "sizes": "M, L, XL", "description": "Khadi-silk blend, ideal for weddings and festivals.", "image": "https://placehold.co/600x750/D4A017/2C1E16?text=Nehru+Jacket"},
+    {"id": "p3", "name": "खादी कापड (प्रति मीटर) | Khadi Fabric per metre", "price": 280, "category": "Fabrics", "sizes": "2.5 m / 3 m rolls", "description": "Plain hand-woven cotton Khadi, natural dyes.", "image": "https://placehold.co/600x750/2C1E16/FAF8F5?text=Khadi+Fabric"},
+    {"id": "p4", "name": "सणासुदीचा सेट | Festive Kurta Pyjama Set", "price": 2499, "category": "Festive Wear", "sizes": "S, M, L, XL", "description": "Embroidered border, made for Diwali and weddings.", "image": "https://placehold.co/600x750/6A1B1A/D4A017?text=Festive+Set"}
+  ],
+  "reviews": [
+    {"id": "r1", "name": "राहुल देशमुख", "rating": 5, "text": "कापड अतिशय दर्जेदार आहे. वाशिममध्ये अशी खादी दुसरीकडे नाही.", "approved": true},
+    {"id": "r2", "name": "Sneha P.", "rating": 5, "text": "Loved the festive kurta set. Fit and finish were perfect.", "approved": true}
+  ]
+}

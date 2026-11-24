@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>सोहळा खादी शॉप | Sohala Khadi Shop, Washim</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FAF8F5;--maroon:#6A1B1A;--gold:#D4A017;--brown:#2C1E16}
+  body{font-family:'Poppins',sans-serif;color:var(--brown);background-color:var(--cream);
+    /* linen weave texture */
+    background-image:repeating-linear-gradient(0deg,rgba(44,30,22,.035) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(44,30,22,.035) 0 1px,transparent 1px 3px)}
+  h1,h2,h3,.brand{font-family:'Rozha One','Yatra One',serif}
+  .glass{background:rgba(250,248,245,.75);backdrop-filter:blur(12px);border-bottom:1px solid rgba(106,27,26,.15)}
+  .btn{background:var(--maroon);color:var(--cream);padding:.75rem 1.5rem;border-radius:.25rem;transition:.2s}
+  .btn:hover{background:var(--gold);color:var(--brown)}
+  .card{transform-style:preserve-3d;transition:transform .15s}
+  .card img{transition:transform .6s}.card:hover img{transform:scale(1.08)}
+  .marquee{display:flex;width:max-content;animation:scroll 30s linear infinite}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .chip.active{background:var(--maroon);color:var(--cream)}
+  @media(prefers-reduced-motion:reduce){.marquee{animation:none}}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+<div id="ann" class="bg-[#6A1B1A] text-[#FAF8F5] text-center text-sm py-2 px-3"></div>
+
+<!-- NAVBAR -->
+<nav class="glass sticky top-0 z-40 flex items-center justify-between px-5 py-3">
+  <a href="#top" class="brand text-xl text-[#6A1B1A]">सोहळा खादी</a>
+  <div class="hidden md:flex gap-6 text-sm font-medium">
+    <a href="#collection">कलेक्शन</a><a href="#heritage">वारसा</a><a href="#reviews">अभिप्राय</a><a href="#contact">संपर्क</a>
+  </div>
+</nav>
+
+<!-- HERO with curtain reveal -->
+<header id="top" class="relative h-[90vh] flex items-center justify-center text-center px-6 overflow-hidden bg-[#6A1B1A]">
+  <div class="relative z-10">
+    <h1 id="heroTitle" class="text-4xl md:text-7xl text-[#FAF8F5] leading-tight"></h1>
+    <p id="heroSub" class="mt-5 text-[#D4A017] max-w-xl mx-auto"></p>
+    <a href="#collection" class="btn inline-block mt-8 !bg-[#D4A017] !text-[#2C1E16]">कलेक्शन पहा | Explore Collection</a>
+  </div>
+  <div class="curtain absolute inset-y-0 left-0 w-1/2 bg-[#2C1E16] z-20"></div>
+  <div class="curtain absolute inset-y-0 right-0 w-1/2 bg-[#2C1E16] z-20"></div>
+</header>
+
+<!-- OFFER MARQUEE -->
+<div class="bg-[#D4A017] text-[#2C1E16] py-2 overflow-hidden"><div id="marquee" class="marquee gap-12 font-medium"></div></div>
+
+<!-- CATALOG -->
+<section id="collection" class="max-w-6xl mx-auto px-5 py-16">
+  <h2 class="text-3xl md:text-4xl text-[#6A1B1A] mb-6">आमचे कलेक्शन | Our Collection</h2>
+  <div id="filters" class="flex flex-wrap gap-2 mb-8"></div>
+  <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+</section>
+
+<!-- HERITAGE -->
+<section id="heritage" class="bg-[#2C1E16] text-[#FAF8F5] py-20 px-5">
+  <div class="max-w-3xl mx-auto space-y-10">
+    <h2 class="text-3xl md:text-4xl text-[#D4A017]">खादी: हातांनी विणलेला वारसा</h2>
+    <p class="story">चरख्यावर सूत कातले जाते, हातमागावर कापड विणले जाते. प्रत्येक धागा कारागिराच्या श्रमाची साक्ष देतो.</p>
+    <p class="story">Khadi is spun and woven by hand, cool in summer and warm in winter, and it gets softer with every wash.</p>
+    <p class="story">वाशिमच्या मातीतून, वाशिमच्या सणांसाठी: सोहळा खादी शॉप ही परंपरा पुढे नेत आहे.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="max-w-6xl mx-auto px-5 py-16">
+  <div class="flex justify-between items-center mb-6 flex-wrap gap-3">
+    <h2 class="text-3xl md:text-4xl text-[#6A1B1A]">ग्राहकांचे अभिप्राय</h2>
+    <button id="openRev" class="btn">अभिप्राय लिहा | Write a Review</button>
+  </div>
+  <div id="revGrid" class="grid md:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- LOCATION + FOOTER -->
+<footer id="contact" class="bg-[#6A1B1A] text-[#FAF8F5] px-5 py-14">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+    <div class="space-y-3">
+      <h2 class="text-3xl text-[#D4A017]" id="stName"></h2>
+      <p id="stAddr"></p><p id="stHours"></p><p id="stPhone"></p>
+    </div>
+    <!-- Replace src with your Google Maps embed link -->
+    <iframe title="Map" class="w-full h-56 rounded" loading="lazy" src="https://www.google.com/maps?q=Washim,Maharashtra&output=embed"></iframe>
+  </div>
+  <p class="text-center text-xs mt-10 opacity-80">© Sohala Khadi Shop, Washim &nbsp;<a href="admin.html" aria-label="Admin login" title="Admin">🔒</a></p>
+</footer>
+
+<!-- REVIEW MODAL -->
+<div id="modal" class="hidden fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
+  <div class="bg-[#FAF8F5] rounded p-6 w-full max-w-md space-y-3">
+    <h3 class="text-2xl text-[#6A1B1A]">तुमचा अभिप्राय</h3>
+    <input id="rName" class="w-full border p-2 rounded" placeholder="नाव | Name">
+    <select id="rStar" class="w-full border p-2 rounded"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>
+    <textarea id="rText" rows="4" class="w-full border p-2 rounded" placeholder="तुमचा अनुभव | Your review"></textarea>
+    <div class="flex gap-3 justify-end"><button id="cancelRev" class="px-4">रद्द</button><button id="sendRev" class="btn">पाठवा | Submit</button></div>
+    <p id="revMsg" class="text-sm"></p>
+  </div>
+</div>
+
+<script>
+/* ---------- CONFIG ---------- */
+// Create a free form at formspree.io and paste its URL here. Leave empty for demo mode (nothing is sent).
+const FORMSPREE_URL = "";
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let DATA = null, cat = "All";
+
+async function init(){
+  try { DATA = await (await fetch("data.json?v=" + Date.now())).json(); }
+  catch(e){ document.body.insertAdjacentHTML("afterbegin","<p class='p-4 text-red-700'>data.json लोड झाले नाही. Please host on a server (GitHub Pages).</p>"); return; }
+  $("#ann").textContent = DATA.announcement;
+  $("#heroTitle").textContent = DATA.hero.title;
+  $("#heroSub").textContent = DATA.hero.subtitle;
+  const offers = DATA.offers.map(o => `<span>✦ ${esc(o)}</span>`).join("");
+  $("#marquee").innerHTML = offers + offers;  // doubled for seamless loop
+  const s = DATA.store;
+  $("#stName").textContent = s.name; $("#stAddr").textContent = "📍 " + s.address;
+  $("#stHours").textContent = "🕒 " + s.hours; $("#stPhone").innerHTML = `📞 <a href="tel:+${esc(s.phone)}">${esc(s.phoneDisplay)}</a>`;
+  renderFilters(); renderGrid(); renderReviews(); animate();
+}
+
+function renderFilters(){
+  const cats = ["All", ...new Set(DATA.products.map(p => p.category))];
+  $("#filters").innerHTML = cats.map(c => `<button class="chip border border-[#6A1B1A] px-4 py-1 rounded-full text-sm ${c===cat?'active':''}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+  document.querySelectorAll(".chip").forEach(b => b.onclick = () => { cat = b.dataset.c; renderFilters(); renderGrid(); });
+}
+
+function renderGrid(){
+  const list = DATA.products.filter(p => cat === "All" || p.category === cat);
+  $("#grid").innerHTML = list.map(p => {
+    const msg = encodeURIComponent(`नमस्कार, मला "${p.name}" (₹${p.price}) बद्दल माहिती हवी आहे.`);
+    return `<article class="card bg-white rounded overflow-hidden shadow">
+      <div class="overflow-hidden aspect-[4/5]"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" class="w-full h-full object-cover"></div>
+      <div class="p-4 space-y-1">
+        <h3 class="text-lg text-[#6A1B1A]">${esc(p.name)}</h3>
+        <p class="font-semibold">₹${esc(p.price)}</p>
+        <p class="text-xs">Sizes: ${esc(p.sizes)}</p>
+        <p class="text-xs opacity-80">${esc(p.description)}</p>
+        <a class="btn block text-center text-sm mt-3" target="_blank" rel="noopener" href="https://wa.me/${esc(DATA.store.phone)}?text=${msg}">WhatsApp वर विचारा | Inquire</a>
+      </div></article>`;
+  }).join("") || "<p>या विभागात सध्या वस्तू नाहीत.</p>";
+  // 3D tilt on pointer move
+  document.querySelectorAll(".card").forEach(c => {
+    c.onmousemove = e => { const r = c.getBoundingClientRect(), x = (e.clientX-r.left)/r.width-.5, y = (e.clientY-r.top)/r.height-.5;
+      c.style.transform = `perspective(700px) rotateY(${x*10}deg) rotateX(${-y*10}deg)`; };
+    c.onmouseleave = () => c.style.transform = "";
+  });
+}
+
+function renderReviews(){
+  const r = DATA.reviews.filter(x => x.approved);
+  $("#revGrid").innerHTML = r.map(x => `<blockquote class="bg-white p-5 rounded shadow border-t-4 border-[#D4A017]">
+    <div class="text-[#D4A017]">${"★".repeat(x.rating)}${"☆".repeat(5-x.rating)}</div>
+    <p class="my-2 text-sm">${esc(x.text)}</p><footer class="font-medium text-[#6A1B1A]">${esc(x.name)}</footer></blockquote>`).join("") || "<p>पहिला अभिप्राय तुमचा असू द्या!</p>";
+}
+
+function animate(){
+  gsap.registerPlugin(ScrollTrigger);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { gsap.set(".curtain",{display:"none"}); return; }
+  // One orchestrated moment: curtain opens, then the headline rises
+  gsap.timeline()
+    .from("#heroTitle",{opacity:0,y:40,duration:1},0.2)
+    .to(".curtain:first-of-type",{xPercent:-100,duration:1.4,ease:"power3.inOut"},0.4)
+    .to(".curtain:last-of-type",{xPercent:100,duration:1.4,ease:"power3.inOut"},0.4)
+    .from("#heroSub, header a",{opacity:0,y:20,stagger:.2},1.2);
+  // Heritage timeline: lines reveal as the section scrolls
+  gsap.from(".story",{opacity:0,x:-40,stagger:.4,scrollTrigger:{trigger:"#heritage",start:"top 65%",end:"bottom 80%",scrub:1}});
+}
+
+/* ---------- Review modal ---------- */
+$("#openRev").onclick = () => $("#modal").classList.remove("hidden");
+$("#cancelRev").onclick = () => $("#modal").classList.add("hidden");
+$("#sendRev").onclick = async () => {
+  const body = {name: $("#rName").value.trim(), rating: $("#rStar").value, review: $("#rText").value.trim()};
+  if (!body.name || !body.review) { $("#revMsg").textContent = "कृपया नाव आणि अभिप्राय भरा."; return; }
+  try {
+    if (FORMSPREE_URL) await fetch(FORMSPREE_URL,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(body)});
+    $("#revMsg").textContent = "धन्यवाद! मालकाच्या मंजुरीनंतर अभिप्राय दिसेल.";
+    setTimeout(() => $("#modal").classList.add("hidden"), 1800);
+  } catch(e){ $("#revMsg").textContent = "पाठवता आले नाही, पुन्हा प्रयत्न करा."; }
+};
+init();
+</script>
+</body>
+</html>
